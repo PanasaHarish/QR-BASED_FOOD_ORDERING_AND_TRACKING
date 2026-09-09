@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ff6b00; /* Vibrant Orange */
+  --color-brand-secondary: #f97316; /* Warm Orange Accent */
+  --color-brand-dark: #09090b; /* Deep Dark Background */
+  --color-brand-light: #ffffff;
+  --color-brand-cream: #1e1e24; /* Dark Card Background */
+  --color-brand-amber: #ff8533;
+  
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(255, 107, 0, 0.2); }
+    50% { opacity: .7; box-shadow: 0 0 20px rgba(255, 107, 0, 0.5); }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0c0e !important;
+  background-image: radial-gradient(at top right, rgba(255, 107, 0, 0.05), transparent 400px), radial-gradient(at bottom left, rgba(255, 85, 0, 0.03), transparent 400px) !important;
+  color: #f4f4f5 !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 107, 0, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 107, 0, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 107, 0, 0.5);
+}
+
+/* Hide scrollbar utility */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism utility classes - Dark, Premium style */
+.glass {
+  background: rgba(24, 24, 27, 0.75) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 107, 0, 0.1) !important;
+}
+
+.glass-light {
+  background: rgba(39, 39, 42, 0.6) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 107, 0, 0.08) !important;
+}
+
+.glass-premium {
+  background: linear-gradient(135deg, rgba(20, 20, 23, 0.85) 0%, rgba(28, 28, 32, 0.9) 100%) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 0, 0.08) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3), 0 4px 12px -2px rgba(255, 107, 0, 0.02) !important;
+}
+
+.glass-premium-light {
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.8) 0%, rgba(32, 32, 36, 0.85) 100%) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 107, 0, 0.06) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Smooth Category Slider hover effect */
+.category-pill-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Maintain crisp white text on colored tags, buttons, icons, or badges */
+button.bg-gradient-to-r, 
+button.bg-brand-primary, 
+a.bg-gradient-to-r, 
+button.bg-red-500,
+button.bg-brand-secondary,
+.bg-red-500,
+.bg-green-500,
+.text-white-force,
+.bg-gradient-to-r span,
+.bg-gradient-to-r svg,
+.bg-gradient-to-tr span,
+.bg-gradient-to-tr svg,
+.bg-brand-primary span,
+.bg-brand-primary svg,
+.bg-gradient-to-r .text-white,
+.bg-gradient-to-r .text-zinc-300 {
+  color: #ffffff !important;
+}
+
+input, select, textarea {
+  background-color: rgba(24, 24, 27, 0.8) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 107, 0, 0.2) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: #71717a !important;
+}
